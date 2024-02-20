@@ -3,6 +3,8 @@
 ##################################################################
 
 resource "kubernetes_config_map_v1" "aws_vpc_cni" {
+  count = var.aws_vpc_cni_create_config_map ? 1 : 0
+
   data = {
     branch-eni-cooldown              = "${var.aws_vpc_cni_branch_eni_cooldown}"
     enable-network-policy-controller = "${var.aws_vpc_cni_enable_network_policy_controller}"

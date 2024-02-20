@@ -8,6 +8,12 @@ variable "aws_vpc_cni_branch_eni_cooldown" {
   type        = number
 }
 
+variable "aws_vpc_cni_create_config_map" {
+  default     = true
+  description = "'true' if the AWS VPC CNI Configuration Map Should be Created"
+  type        = bool
+}
+
 variable "aws_vpc_cni_enable_network_policy_controller" {
   default     = false
   description = "'true' if Network Policy Controller Should be Enabled"
